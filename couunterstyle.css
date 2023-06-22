@@ -127,7 +127,6 @@ button {
     flex-direction: column;
   }
   .hero-container {
-    background-color: red;
     width: 90%;
     position: absolute;
     top: 150px;
