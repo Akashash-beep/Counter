@@ -1,8 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 .hero {
   min-height: 100vh;
@@ -18,7 +18,7 @@
   color: white;
   padding: 0px;
   margin: 0;
-  right: -500px;
+
   top: 10px;
   display: flex;
   transition: 0.5s ease-in-out;
@@ -29,13 +29,22 @@
 }
 
 .hide {
-  right: -500px;
-
-  transition: 0.5s ease-in-out;
+  display: none;
+  transition: 2s backwards;
 }
 .show {
+  display: block;
   right: 0;
   transition: 0.5s ease-in-out;
+  animation: animate1 0.5s ease-in-out;
+}
+@keyframes animate1 {
+  0% {
+    right: -500px;
+  }
+  100% {
+    right: 0;
+  }
 }
 
 .hero-container {
@@ -108,4 +117,23 @@ button {
   text-align: center;
   color: white;
   overflow-y: hidden;
+}
+
+@media only screen and (max-width: 430px) {
+  .hero {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-container {
+    background-color: red;
+    width: 90%;
+    position: absolute;
+    top: 150px;
+  }
+  #toggle {
+    position: relative;
+    margin-top: 700px;
+  }
 }
